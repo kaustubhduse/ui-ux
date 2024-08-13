@@ -1,48 +1,32 @@
-import React from "react";
+import React from 'react';
+import TestimonialCard from 'UI/TestinomialCard';
+import Image from 'next/image'; // Import the Image component
 
 const testimonials = [
-    {
-      image: "/assets/testinomial.png",
-      name: "John Doe",
-      designation: "CEO, XYZ Company",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium",
-    },
-    {
-      image: "/assets/testinomial.png",
-      name: "Jane Smith",
-      designation: "CTO, ABC Corp",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium",
-    },
-    {
-      image: "/assets/testinomial.png",
-      name: "Robert Brown",
-      designation: "COO, DEF Inc",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium",
-    },
-    {
-      image: "/assets/testinomial.png",
-      name: "Emily White",
-      designation: "CFO, GHI LLC",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium",
-    },
-];    
+  {
+    image: "/assets/testinomial.png",
+    name: "John Doe",
+    designation: "CEO, XYZ Company",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium",
+  },
+  // ... other testimonials
+];
 
-function Testimonials() { 
+function Testinomials() {
   return (
     <div className="mt-[10%]">
       <div>
-        <h1 className="text-4xl font-bold text-center">Testimonials</h1> {/* Corrected spelling */}
+        <h1 className="text-4xl font-bold text-center">Testinomials</h1>
         <p className="text-center mt-[4%]">
           Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
           lectus netus in. Aliquet donec morbi convallis pretium
         </p>
       </div>
 
-      
+      <div className="flex justify-center mt-[7%]">
+        <TestimonialCard testimonials={testimonials} />
+      </div>
 
       <div className="mt-[10%]">
         <h1 className="text-4xl font-bold text-center">
@@ -70,4 +54,4 @@ function Testimonials() {
   );
 }
 
-export default Testimonials; // Corrected spelling
+export default Testinomials;
