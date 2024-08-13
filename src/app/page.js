@@ -129,7 +129,7 @@ function App() {
       
 
       {/* {Testinomials} */}
-      <Testinomials />
+      {/* <Testinomials /> */}
 
       {/* footer */}
       <div className="mt-[10%] items-center justify-center bg-gray-100 p-2">
