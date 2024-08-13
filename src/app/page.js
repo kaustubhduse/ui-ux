@@ -3,16 +3,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-import Card from "UI/Card";
-import SmallCard from "UI/SmallCard";
-import TestimonialCard from "UI/TestinomialCard";
-
 import AboutMe from "@/components/Aboutme";
 import Services from "@/components/Services";
 import MyProjects from "@/components/MyProjects";
-import Testinomials from "@/components/Testinomials";
-
-
+// import Testinomials from "@/components/Testinomials";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,7 +22,13 @@ function App() {
         <div className="relative flex items-center h-[67px] top-[61px] bg-slate-600 mx-auto">
           {/* Logo and Title */}
           <div className="flex items-center flex-shrink-0 w-full md:w-auto">
-            <img src="/assets/logo.png" alt="Logo" className="h-[67px] p-3" />
+            <Image
+              width={67}
+              height={67}
+              src="/assets/logo.png"
+              alt="Logo"
+              className="h-[67px] p-3"
+            />
             <p className="text-2xl md:text-4xl">
               <span className="font-bold">M</span>umair
             </p>
@@ -110,7 +110,9 @@ function App() {
           </button>
         </div>
         <div className="flex-1 mt-6 lg:mt-0 lg:ml-6">
-          <img
+          <Image
+            width={300}
+            height={300}
             src="/assets/profile.png"
             alt="Profile"
             className="w-full max-w-[300px] h-auto"
@@ -126,7 +128,6 @@ function App() {
 
       {/* My Projects */}
       <MyProjects />
-      
 
       {/* {Testinomials} */}
       {/* <Testinomials /> */}
@@ -134,7 +135,13 @@ function App() {
       {/* footer */}
       <div className="mt-[10%] items-center justify-center bg-gray-100 p-2">
         <div className="p-4 flex items-center justify-center flex-shrink-0 w-full md:w-auto">
-          <img src="/assets/logo.png" alt="Logo" className="h-[57px] p-3" />
+          <Image
+            width={57}
+            height={57}
+            src="/assets/logo.png"
+            alt="Logo"
+            className="h-[57px] p-3"
+          />
           <p className="text-xl md:text-2xl">
             <span className="font-bold">M</span>umair
           </p>

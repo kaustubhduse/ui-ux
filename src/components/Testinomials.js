@@ -49,7 +49,7 @@ function Testinomials() {
 
       <div className="mt-[10%]">
         <h1 className="text-4xl font-bold text-center">
-          Let's Design Together
+          Lets Design Together
         </h1>
         <p className="text-center mt-[3%]">
           Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh

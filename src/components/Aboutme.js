@@ -1,5 +1,6 @@
 // components/AboutMe.js
 import React, { useState } from "react";
+import Image from "next/image";
 
 function AboutMe() {
   const [sliderux, setSliderux] = useState(0);
@@ -26,7 +27,9 @@ function AboutMe() {
   return (
     <div className="flex items-center mt-12">
       <div className="flex-1">
-        <img
+        <Image
+          width={350}
+          height={350}
           src="/assets/aboutme.png"
           alt="Profile"
           className="w-full max-w-[350px] h-auto"
@@ -37,9 +40,9 @@ function AboutMe() {
           <span className="text-4xl font-bold">About Me</span>
         </p>
         <p className="mt-4">
-          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
-          nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis
-          tempus pharetra
+          Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
+          lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus
+          pharetra
         </p>
         <p className="mt-2 text-xl">UX</p>
         <input
