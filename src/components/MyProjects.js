@@ -1,5 +1,6 @@
 import React from "react";
 import SmallCard from "UI/SmallCard";
+import Image from "next/image";
 
 function MyProjects() {
   return (
@@ -19,17 +20,23 @@ function MyProjects() {
         <SmallCard title="Graphic Design" />
       </div>
       <div className="flex flex-col md:flex-row justify-center md:space-x-6">
-        <img
+        <Image
+          width={300}
+          height={300}
           src="/assets/aircalling.png"
           alt="Air Calling"
           className="w-[100%] md:w-[30%] h-auto mt-[8%]"
         />
-        <img
+        <Image
+          width={300}
+          height={300}
           src="/assets/business.png"
           alt="Business"
           className="w-[100%] md:w-[30%] h-auto mt-[8%]"
         />
-        <img
+        <Image
+          width={300}
+          height={300}
           src="/assets/ecom.png"
           alt="Ecom"
           className="w-[100%] md:w-[30%] h-auto mt-[8%]"

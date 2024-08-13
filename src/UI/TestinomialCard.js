@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 function TestimonialCard({ testimonials }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,10 +31,12 @@ function TestimonialCard({ testimonials }) {
       <div className="flex items-center justify-center space-x-4">
         {/* Previous Testimonial */}
         <div className="hidden md:flex bg-gray-100 w-[50%] p-5 rounded-lg opacity-50">
-          <img
-            src="/assets/profile.jpg"
+          <Image
+            src={testimonials[getPrevIndex()].image}
             alt="Previous Profile"
-            className="h-[40px] w-[40px] rounded-full mx-auto" // Reduced size
+            width={40} // Set width
+            height={40} // Set height
+            className="rounded-full mx-auto" // Reduced size
           />
           <div className="ml-2">
             <p className="text-sm">{testimonials[getPrevIndex()].description}</p>
@@ -43,10 +46,12 @@ function TestimonialCard({ testimonials }) {
 
         {/* Current Testimonial */}
         <div className="flex flex-col md:flex-row bg-gray-100 w-[50%] md:w-[50%] p-7 rounded-lg">
-          <img
+          <Image
             src={testimonials[currentIndex].image}
             alt="Profile"
-            className="h-[80px] w-[80px] rounded-full mx-auto md:mx-0" // Reduced size
+            width={80} // Set width
+            height={80} // Set height
+            className="rounded-full mx-auto md:mx-0" // Adjusted size
           />
           <div className="ml-0 md:ml-4 mt-4 md:mt-0 text-center md:text-left">
             <p>{testimonials[currentIndex].description}</p>
@@ -57,10 +62,12 @@ function TestimonialCard({ testimonials }) {
 
         {/* Next Testimonial */}
         <div className="hidden md:flex bg-gray-100 w-[50%] p-5 rounded-lg opacity-50">
-          <img
+          <Image
             src={testimonials[getNextIndex()].image}
             alt="Next Profile"
-            className="h-[40px] w-[40px] rounded-full mx-auto" // Reduced size
+            width={40} // Set width
+            height={40} // Set height
+            className="rounded-full mx-auto" // Reduced size
           />
           <div className="ml-2">
             <p className="text-sm">{testimonials[getNextIndex()].description}</p>

@@ -1,17 +1,36 @@
-import React from 'react';
-import TestimonialCard from 'UI/TestinomialCard';
-import Image from 'next/image'; // Import the Image component
+import React from "react";
+import TestimonialCard from "UI/TestinomialCard";
 
 const testimonials = [
-  {
-    image: "/assets/testinomial.png",
-    name: "John Doe",
-    designation: "CEO, XYZ Company",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium",
-  },
-  // ... other testimonials
-];
+    {
+      image: "/assets/testinomial.png",
+      name: "John Doe",
+      designation: "CEO, XYZ Company",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium",
+    },
+    {
+      image: "/assets/testinomial.png",
+      name: "Jane Smith",
+      designation: "CTO, ABC Corp",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium",
+    },
+    {
+      image: "/assets/testinomial.png",
+      name: "Robert Brown",
+      designation: "COO, DEF Inc",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium",
+    },
+    {
+      image: "/assets/testinomial.png",
+      name: "Emily White",
+      designation: "CFO, GHI LLC",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium",
+    },
+  ];    
 
 function Testinomials() {
   return (
