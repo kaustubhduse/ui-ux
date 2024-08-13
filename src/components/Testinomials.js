@@ -1,5 +1,5 @@
 import React from "react";
-import TestimonialCard from "UI/TestinomialCard";
+import TestimonialCard from "UI/TestimonialCard"; // Corrected path if needed
 
 const testimonials = [
     {
@@ -30,13 +30,13 @@ const testimonials = [
       description:
         "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium",
     },
-  ];    
+];    
 
-function Testinomials() {
+function Testimonials() { 
   return (
     <div className="mt-[10%]">
       <div>
-        <h1 className="text-4xl font-bold text-center">Testinomials</h1>
+        <h1 className="text-4xl font-bold text-center">Testimonials</h1> {/* Corrected spelling */}
         <p className="text-center mt-[4%]">
           Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
           lectus netus in. Aliquet donec morbi convallis pretium
@@ -73,4 +73,4 @@ function Testinomials() {
   );
 }
 
-export default Testinomials;
+export default Testimonials; // Corrected spelling
