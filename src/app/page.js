@@ -6,7 +6,7 @@ import Image from "next/image";
 import AboutMe from "@/components/Aboutme";
 import Services from "@/components/Services";
 import MyProjects from "@/components/MyProjects";
-// import Testinomials from "@/components/Testinomials";
+import Testinomials from "@/components/Testinomials";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -130,7 +130,7 @@ function App() {
       <MyProjects />
 
       {/* {Testinomials} */}
-      {/* <Testinomials /> */}
+      <Testinomials />
 
       {/* footer */}
       <div className="mt-[10%] items-center justify-center bg-gray-100 p-2">
