@@ -1,5 +1,4 @@
 import React from "react";
-import TestimonialCard from "UI/TestimonialCard"; // Corrected path if needed
 
 const testimonials = [
     {
@@ -43,9 +42,7 @@ function Testimonials() {
         </p>
       </div>
 
-      <div className="flex justify-center mt-[7%]">
-        <TestimonialCard testimonials={testimonials} />
-      </div>
+      
 
       <div className="mt-[10%]">
         <h1 className="text-4xl font-bold text-center">
