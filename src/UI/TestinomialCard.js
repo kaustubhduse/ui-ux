@@ -53,6 +53,7 @@ function TestimonialCard({ testimonials, currentIndex, setCurrentIndex }) {
           />
           <div className="ml-4">
             <p>{testimonials[currentIndex].description}</p>
+            <br></br>
             <p className="mt-5">{testimonials[currentIndex].name}</p>
             <p>{testimonials[currentIndex].designation}</p>
           </div>

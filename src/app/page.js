@@ -11,6 +11,7 @@ import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
 import AnimatedLetters from "@/components/AnimatedLetters";
 import "@/components/AnimatedLetters.scss";
+import SocialMedia from "@/components/SocialMedia";
 
 function App() {
   const [letterClass, setLetterClass] = useState('text-animate');
@@ -64,12 +65,12 @@ function App() {
       <Navbar menuOpen={menuOpen} toggleMenu={toggleMenu}>
         <div className="">
           {/* Home Section */}
-          <div id="home" className="py-[12%] flex items-center px-[4%]">
+          <div id="home" className="py-[12%] flex items-center px-[4%] lg:px-[15%] ">
             <div className="flex-1">
               <p className="text-2xl">
                 <span className="text-sm">Hi I am</span> <br />
                 <span className="text-xl">Muhammad Umair</span> <br />
-                <span className="text-5xl font-bold mt-4">
+                <span className="lg:text-5xl text-4xl  font-bold mt-4">
                 <AnimatedLetters
                   letterClass={letterClass}
                   strArray={nameArray}
@@ -97,7 +98,8 @@ function App() {
                 Hire Me
               </button>
             </div>
-            <div className="flex-1 mt-6 lg:mt-0 lg:ml-6">
+            <div className="flex mt-6 lg:mt-0 lg:ml-6">
+              <div className="">
               <Image
                 width={300}
                 height={300}
@@ -105,6 +107,8 @@ function App() {
                 alt="Profile"
                 className="w-full max-w-[300px] h-auto"
               />
+              <SocialMedia />
+              </div>
             </div>
           </div>
 
@@ -183,35 +187,8 @@ function App() {
               </a>
             </div>
 
-            <div className="flex space-x-5 justify-center items-center p-3">
-              <Image
-                width={20}
-                height={20}
-                src="/assets/facebook.png"
-                alt="Facebook"
-                className="h-[20px] mt-[3%] cursor-pointer"
-              />
-              <Image
-                width={20}
-                height={20}
-                src="/assets/twitter.png"
-                alt="Twitter"
-                className="h-[20px] mt-[3%] cursor-pointer"
-              />
-              <Image
-                width={20}
-                height={20}
-                src="/assets/instagram.png"
-                alt="Instagram"
-                className="h-[20px] mt-[3%] cursor-pointer"
-              />
-              <Image
-                width={20}
-                height={20}
-                src="/assets/linkedin.png"
-                alt="Linkedin"
-                className="h-[20px] mt-[3%] cursor-pointer"
-              />
+            <div >
+              <SocialMedia />
             </div>
           </div>
 
