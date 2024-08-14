@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function MyProjects() {
   return (
-    <div id="projects" className="lg:px-[4%]">
+    <div id="projects" className="lg:px-[4%] mt-[13%]">
       <div className="mt-[10%]">
         <h1 className="text-4xl font-bold text-center">My Projects</h1>
         <p className="text-center mt-[2%]">
