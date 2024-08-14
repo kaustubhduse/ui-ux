@@ -2,3 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Initial state: translateY(100px) and opacity 0 */
+
+.slide-in {
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+/***** Slide-In Active Class *****/
+.slide-in.active {
+  transform: translateX(0);
+}
+
+
+
+
+/***** FadeIn Underline *****/
+.line {
+  border-bottom: 3px solid red;
+  width: 200px;
+  margin: auto;
+}
+.fade-in {
+  animation: fadeIn ease 3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

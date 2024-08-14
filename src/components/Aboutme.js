@@ -25,7 +25,7 @@ function AboutMe() {
   };
 
   return (
-    <div className="flex items-center mt-12 lg:px-[4%]">
+    <div id="about-me" className="flex items-center mt-[15%] lg:px-[4%]">
       <div className="flex-1">
         <Image
           width={350}

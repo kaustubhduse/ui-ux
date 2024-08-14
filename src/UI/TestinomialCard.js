@@ -25,7 +25,7 @@ function TestimonialCard({ testimonials }) {
   };
 
   return (
-    <div className="relative w-[100%] flex flex-col items-center">
+    <div className="relative w-[50%] flex flex-col items-center">
       <div className="flex items-center justify-center space-x-4">
         {/* Previous Testimonial */}
         <div className="hidden md:flex bg-gray-100 w-[20%] p-5 rounded-lg opacity-50">

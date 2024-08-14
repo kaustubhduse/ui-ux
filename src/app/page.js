@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
 import AboutMe from "@/components/Aboutme";
 import Services from "@/components/Services";
 import MyProjects from "@/components/MyProjects";
 import Testinomials from "@/components/Testinomials";
+import Contact from "@/components/Contact";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,6 +14,31 @@ function App() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll(".slide-in");
+      elements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          el.classList.add("active");
+        } else {
+          el.classList.remove("active");
+        }
+      });
+    };
+
+    // Scroll to the Home section when the page loads
+    const homeSection = document.getElementById("home");
+    if (homeSection) {
+      homeSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Trigger scroll event to handle initial visibility
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="">
@@ -36,12 +61,12 @@ function App() {
 
           {/* Navigation for larger screens */}
           <div className="hidden lg:flex space-x-12 items-center ml-auto">
-            <p className="whitespace-nowrap cursor-pointer">Home</p>
-            <p className="whitespace-nowrap cursor-pointer">About Me</p>
-            <p className="whitespace-nowrap cursor-pointer">Services</p>
-            <p className="whitespace-nowrap cursor-pointer">Projects</p>
-            <p className="whitespace-nowrap cursor-pointer">Testimonials</p>
-            <p className="whitespace-nowrap cursor-pointer">Contact</p>
+            <a href="#home" className="whitespace-nowrap cursor-pointer">Home</a>
+            <a href="#about-me" className="whitespace-nowrap cursor-pointer">About Me</a>
+            <a href="#services" className="whitespace-nowrap cursor-pointer">Services</a>
+            <a href="#projects" className="whitespace-nowrap cursor-pointer">Projects</a>
+            <a href="#testimonials" className="whitespace-nowrap cursor-pointer">Testimonials</a>
+            <a href="#contact" className="whitespace-nowrap cursor-pointer">Contact</a>
             <button
               style={{ backgroundColor: "rgba(253, 111, 0, 1)" }}
               className="text-white px-4 py-2 rounded cursor-pointer"
@@ -52,7 +77,7 @@ function App() {
 
           {/* Hamburger Menu Button for smaller screens */}
           <button
-            className="block lg:hidden absolute text-black text-2xl right-4 top-4" 
+            className="block lg:hidden absolute text-black text-2xl right-4 top-4"
             onClick={toggleMenu}
           >
             &#9776;
@@ -63,18 +88,12 @@ function App() {
         {menuOpen && (
           <div className="lg:hidden bg-slate-600 text-white p-4 absolute top-[67px] w-full">
             <div className="flex flex-col space-y-2">
-              <div className="flex justify-between">
-                <p>Home</p>
-                <p>About Me</p>
-              </div>
-              <div className="flex justify-between">
-                <p>Services</p>
-                <p>Projects</p>
-              </div>
-              <div className="flex justify-between">
-                <p>Testimonials</p>
-                <p>Contact</p>
-              </div>
+              <a href="#home" className="block">Home</a>
+              <a href="#about-me" className="block">About Me</a>
+              <a href="#services" className="block">Services</a>
+              <a href="#projects" className="block">Projects</a>
+              <a href="#testimonials" className="block">Testimonials</a>
+              <a href="#contact" className="block">Contact</a>
               <button
                 style={{ backgroundColor: "rgba(253, 111, 0, 1)" }}
                 className="text-white px-4 py-2 rounded mt-4 block mx-auto"
@@ -86,8 +105,8 @@ function App() {
         )}
       </div>
 
-      {/* New Section Below Navbar */}
-      <div className="py-[12%] flex items-center px-[4%]">
+      {/* Home Section */}
+      <div id="home" className="py-[12%] flex items-center px-[4%]">
         <div className="flex-1">
           <p className="text-2xl">
             <span className="text-sm">Hi I am</span> <br />
@@ -120,19 +139,28 @@ function App() {
         </div>
       </div>
 
-      {/* About Me Section */}
-      <AboutMe />
+      {/* Other Sections */}
+      <div id="about-me" className="slide-in">
+        <AboutMe />
+      </div>
 
-      {/* Services */}
-      <Services />
+      <div id="services" className="slide-in">
+        <Services />
+      </div>
 
-      {/* My Projects */}
-      <MyProjects />
+      <div id="projects" className="slide-in">
+        <MyProjects />
+      </div>
 
-      {/* {Testinomials} */}
-      <Testinomials />
+      <div id="testimonials" className="slide-in">
+        <Testinomials />
+      </div>
 
-      {/* footer */}
+      <div id="contact" className="slide-in">
+        <Contact />
+      </div>
+
+      {/* Footer */}
       <div className="mt-[10%] items-center justify-center bg-gray-100 p-2">
         <div className="p-4 flex items-center justify-center flex-shrink-0 w-full md:w-auto">
           <Image
@@ -148,12 +176,12 @@ function App() {
         </div>
 
         <div className="flex flex-wrap lg:flex-nowrap space-x-12 items-center justify-center mt-[3%]">
-          <p className="whitespace-nowrap cursor-pointer">Home</p>
-          <p className="whitespace-nowrap cursor-pointer">About Me</p>
-          <p className="whitespace-nowrap cursor-pointer">Services</p>
-          <p className="whitespace-nowrap cursor-pointer">Projects</p>
-          <p className="whitespace-nowrap cursor-pointer">Testimonials</p>
-          <p className="whitespace-nowrap cursor-pointer">Contact</p>
+          <a href="#home" className="whitespace-nowrap cursor-pointer">Home</a>
+          <a href="#about-me" className="whitespace-nowrap cursor-pointer">About Me</a>
+          <a href="#services" className="whitespace-nowrap cursor-pointer">Services</a>
+          <a href="#projects" className="whitespace-nowrap cursor-pointer">Projects</a>
+          <a href="#testimonials" className="whitespace-nowrap cursor-pointer">Testimonials</a>
+          <a href="#contact" className="whitespace-nowrap cursor-pointer">Contact</a>
         </div>
 
         <div className="flex space-x-5 justify-center items-center p-3">
@@ -188,7 +216,7 @@ function App() {
         </div>
       </div>
 
-      {/* last footer */}
+      {/* Last Footer */}
       <div
         className="flex justify-center items-center p-3"
         style={{ background: "rgba(84, 84, 84, 1)" }}
