@@ -117,7 +117,7 @@ function App() {
             <Services />
           </div>
 
-          <div id="projects" style={{scrollMarginTop: "7rem"}} className="slide-in">
+          <div id="projects" style={{scrollMarginTop: "9rem"}} className="slide-in">
             <MyProjects />
           </div>
 
