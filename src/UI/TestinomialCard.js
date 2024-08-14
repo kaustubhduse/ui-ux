@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
-function TestimonialCard({ testimonials }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
+function TestimonialCard({ testimonials, currentIndex, setCurrentIndex }) {
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
@@ -25,27 +23,27 @@ function TestimonialCard({ testimonials }) {
   };
 
   return (
-    <div className="relative w-[50%] flex flex-col items-center">
-      <div className="flex items-center justify-center space-x-4">
-        {/* Previous Testimonial */}
-        <div className="hidden md:flex bg-gray-100 w-[20%] p-5 rounded-lg opacity-50">
-          <Image
-            src={testimonials[getPrevIndex()].image}
-            alt="Previous Profile"
-            width={60}
-            height={60}
-            className="rounded-full mx-auto"
-          />
-          <div className="ml-2">
-            <p className="text-sm">
-              {testimonials[getPrevIndex()].description}
-            </p>
-            <p className="mt-2 text-sm">{testimonials[getPrevIndex()].name}</p>
-          </div>
+    <div className="relative flex items-center justify-center">
+      {/* Previous Testimonial */}
+      <div className="absolute left-0 w-[20%] hidden md:flex bg-gray-100 p-5 rounded-lg opacity-50">
+        <Image
+          src={testimonials[getPrevIndex()].image}
+          alt="Previous Profile"
+          width={70}
+          height={60}
+          className="rounded-full mx-auto"
+        />
+        <div className="ml-2">
+          <p className="text-sm">
+            {testimonials[getPrevIndex()].description}
+          </p>
+          <p className="mt-2 text-sm">{testimonials[getPrevIndex()].name}</p>
         </div>
+      </div>
 
-        {/* Current Testimonial */}
-        <div className="flex flex-col md:flex-row bg-gray-100 w-[60%] md:w-[50%] p-7 rounded-lg">
+      {/* Current Testimonial */}
+      <div className="bg-gray-100 w-[60%] md:w-[50%] p-7 rounded-lg">
+        <div className="flex flex-col md:flex-row">
           <Image
             src={testimonials[currentIndex].image}
             alt="Profile"
@@ -59,39 +57,27 @@ function TestimonialCard({ testimonials }) {
             <p>{testimonials[currentIndex].designation}</p>
           </div>
         </div>
+      </div>
 
-        {/* Next Testimonial */}
-        <div className="hidden md:flex bg-gray-100 w-[20%] p-5 rounded-lg opacity-50">
-          <Image
-            src={testimonials[getNextIndex()].image}
-            alt="Next Profile"
-            width={60}
-            height={60}
-            className="rounded-full mx-auto"
-          />
-          <div className="ml-2">
-            <p className="text-sm">
-              {testimonials[getNextIndex()].description}
-            </p>
-            <p className="mt-2 text-sm">{testimonials[getNextIndex()].name}</p>
-          </div>
+      {/* Next Testimonial */}
+      <div className="absolute right-0 w-[20%] hidden md:flex bg-gray-100 p-5 rounded-lg opacity-50">
+        <Image
+          src={testimonials[getNextIndex()].image}
+          alt="Next Profile"
+          width={60}
+          height={60}
+          className="rounded-full mx-auto"
+        />
+        <div className="ml-2">
+          <p className="text-sm">
+            {testimonials[getNextIndex()].description}
+          </p>
+          <p className="mt-2 text-sm">{testimonials[getNextIndex()].name}</p>
         </div>
       </div>
 
-      {/* Sliding Bars */}
-      <div className="flex space-x-2 mt-4">
-        {testimonials.map((_, index) => (
-          <div
-            key={index}
-            className={`h-2 w-8 rounded-full ${
-              index === currentIndex ? "bg-orange-500" : "bg-gray-300"
-            }`}
-          ></div>
-        ))}
-      </div>
-
       {/* Navigation Buttons */}
-      <div className="absolute top-[50%] transform -translate-y-[50%] w-full flex justify-between px-4">
+      <div className="absolute top-[10%] mt-[15%] ">
         <button onClick={prevSlide} className="text-2xl">
           &#8592;
         </button>

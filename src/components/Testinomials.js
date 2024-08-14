@@ -34,6 +34,7 @@ const testimonials = [
 
 function Testinomials() {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,7 +59,7 @@ function Testinomials() {
       className={`mt-[10%] ${isVisible ? "fade-in" : ""}`}
     >
       <div>
-        <h1 className="text-4xl font-bold text-center">Testinomials</h1>
+        <h1 className="text-4xl font-bold text-center">Testimonials</h1>
         <p className="text-center mt-[4%]">
           Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
           lectus netus in. Aliquet donec morbi convallis pretium
@@ -66,7 +67,23 @@ function Testinomials() {
       </div>
 
       <div className="flex justify-center mt-[7%]">
-        <TestimonialCard testimonials={testimonials} />
+        <TestimonialCard
+          testimonials={testimonials}
+          currentIndex={currentIndex} // Pass currentIndex to TestimonialCard
+          setCurrentIndex={setCurrentIndex} // Pass setCurrentIndex to TestimonialCard
+        />
+      </div>
+
+      {/* Sliding Bars */}
+      <div className="flex space-x-2 mt-[8%] justify-center">
+        {testimonials.map((_, index) => (
+          <div
+            key={index}
+            className={`h-2 w-8 rounded-full ${
+              index === currentIndex ? "bg-orange-500" : "bg-gray-300"
+            }`}
+          ></div>
+        ))}
       </div>
     </div>
   );

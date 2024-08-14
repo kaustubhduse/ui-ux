@@ -1,8 +1,23 @@
 // components/AboutMe.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import AnimatedLetters from "./AnimatedLetters";
 
 function AboutMe() {
+
+  const [letterClass, setLetterClass] = useState('text-animate');
+  const nameArray = ['A', 'b','o','u','t', ' ', 'm','e'];
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setLetterClass('text-animate-hover');
+    }, 1000);
+  
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   const [sliderux, setSliderux] = useState(0);
   const [sliderweb, setSliderweb] = useState(0);
   const [sliderapp, setSliderapp] = useState(0);
@@ -25,7 +40,7 @@ function AboutMe() {
   };
 
   return (
-    <div id="about-me" className="flex items-center mt-[15%] lg:px-[4%]">
+    <div id="about-me" className="flex items-center mt-[1%] lg:px-[4%]">
       <div className="flex-1">
         <Image
           width={350}
@@ -37,7 +52,13 @@ function AboutMe() {
       </div>
       <div className="flex-1 mt-6">
         <p className="text-2xl">
-          <span className="text-4xl font-bold">About Me</span>
+          <span className="text-4xl font-bold">
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={nameArray}
+              idx={12}
+            />
+          </span>
         </p>
         <p className="mt-4">
           Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh

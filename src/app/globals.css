@@ -40,3 +40,33 @@ html {
   }
 }
 
+
+/* In your global CSS file or Tailwind configuration file */
+
+.hover-zoom {
+  transition: transform 0.3s ease, background-color 0.5s ease;
+  border-radius: 0.5rem; 
+}
+
+.hover-zoom:hover {
+  padding: 0.5rem;
+  transform: scale(1.2); /* Zoom effect */
+  background-color: rgba(253, 111, 0, 1); /* Orange background */
+  color: white; /* Ensure text is readable */
+  border-radius: 0.5rem; /* Rounded corners */
+}
+
+
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

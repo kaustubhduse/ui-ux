@@ -24,7 +24,7 @@ function Services() {
   return (
     <div
       id="services"
-      className={`mt-[20%] lg:px-[4%] ${isVisible ? "fade-in" : ""}`}
+      className={`mt-[15%] lg:px-[4%] ${isVisible ? "fade-in" : ""}`}
     >
       <h1 className="text-4xl font-bold text-center">Services</h1>
       <p className="text-center mt-[2%]">
