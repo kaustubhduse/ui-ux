@@ -16,10 +16,10 @@ function App() {
   };
 
   return (
-    <div className="lg:px-[10%]">
-      <div className="relative">
+    <div className="">
+      <div className="relative lg:px-[4%]">
         {/* Header Container */}
-        <div className="relative flex items-center h-[67px] top-[61px] bg-slate-600 mx-auto">
+        <div className="relative flex items-center h-[67px] top-[21px] mx-auto">
           {/* Logo and Title */}
           <div className="flex items-center flex-shrink-0 w-full md:w-auto">
             <Image
@@ -52,7 +52,7 @@ function App() {
 
           {/* Hamburger Menu Button for smaller screens */}
           <button
-            className="block lg:hidden text-white text-2xl ml-auto "
+            className="block lg:hidden absolute text-black text-2xl right-4 top-4" 
             onClick={toggleMenu}
           >
             &#9776;
@@ -87,7 +87,7 @@ function App() {
       </div>
 
       {/* New Section Below Navbar */}
-      <div className="py-[12%] flex items-center">
+      <div className="py-[12%] flex items-center px-[4%]">
         <div className="flex-1">
           <p className="text-2xl">
             <span className="text-sm">Hi I am</span> <br />

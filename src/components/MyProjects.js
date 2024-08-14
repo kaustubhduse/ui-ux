@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function MyProjects() {
   return (
-    <div>
+    <div className="lg:px-[4%]">
       <div className="mt-[10%]">
         <h1 className="text-4xl font-bold text-center">My Projects</h1>
         <p className="text-center mt-[2%]">
@@ -12,14 +12,15 @@ function MyProjects() {
           lectus netus in. Aliquet donec morbi convallis pretium
         </p>
       </div>
-      <div className="flex justify-center space-x-7">
+      <div className="flex justify-center space-x-7 mt-[3%]">
         <SmallCard title="All" />
         <SmallCard title="UI/UX" />
         <SmallCard title="Web Design" />
         <SmallCard title="App Design" />
         <SmallCard title="Graphic Design" />
       </div>
-      <div className="flex flex-col md:flex-row justify-center md:space-x-6">
+      <div className="flex flex-col  md:flex-row justify-center items-center md:space-x-6 ">
+        <div className="lg:w-[100%] w-[60%] flex flex-col  md:flex-row justify-center items-center md:space-x-6">
         <Image
           width={300}
           height={300}
@@ -41,6 +42,7 @@ function MyProjects() {
           alt="Ecom"
           className="w-[100%] md:w-[30%] h-auto mt-[8%]"
         />
+        </div>
       </div>
     </div>
   );

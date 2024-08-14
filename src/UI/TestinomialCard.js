@@ -5,14 +5,12 @@ function TestimonialCard({ testimonials }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
-    console.log("Next Slide");  // Debugging log
     setCurrentIndex((prevIndex) =>
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
-    console.log("Previous Slide");  // Debugging log
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
     );
@@ -27,33 +25,35 @@ function TestimonialCard({ testimonials }) {
   };
 
   return (
-    <div className="relative w-[50%] flex flex-col items-center">
+    <div className="relative w-[100%] flex flex-col items-center">
       <div className="flex items-center justify-center space-x-4">
         {/* Previous Testimonial */}
-        <div className="hidden md:flex bg-gray-100 w-[50%] p-5 rounded-lg opacity-50">
+        <div className="hidden md:flex bg-gray-100 w-[20%] p-5 rounded-lg opacity-50">
           <Image
             src={testimonials[getPrevIndex()].image}
             alt="Previous Profile"
-            width={40} // Set width
-            height={40} // Set height
-            className="rounded-full mx-auto" // Reduced size
+            width={60}
+            height={60}
+            className="rounded-full mx-auto"
           />
           <div className="ml-2">
-            <p className="text-sm">{testimonials[getPrevIndex()].description}</p>
+            <p className="text-sm">
+              {testimonials[getPrevIndex()].description}
+            </p>
             <p className="mt-2 text-sm">{testimonials[getPrevIndex()].name}</p>
           </div>
         </div>
 
         {/* Current Testimonial */}
-        <div className="flex flex-col md:flex-row bg-gray-100 w-[50%] md:w-[50%] p-7 rounded-lg">
+        <div className="flex flex-col md:flex-row bg-gray-100 w-[60%] md:w-[50%] p-7 rounded-lg">
           <Image
             src={testimonials[currentIndex].image}
             alt="Profile"
-            width={80} // Set width
-            height={80} // Set height
-            className="rounded-full mx-auto md:mx-0" // Adjusted size
+            width={100}
+            height={100}
+            className="rounded-full mx-auto md:mx-0"
           />
-          <div className="ml-0 md:ml-4 mt-4 md:mt-0 text-center md:text-left">
+          <div className="ml-4">
             <p>{testimonials[currentIndex].description}</p>
             <p className="mt-5">{testimonials[currentIndex].name}</p>
             <p>{testimonials[currentIndex].designation}</p>
@@ -61,16 +61,18 @@ function TestimonialCard({ testimonials }) {
         </div>
 
         {/* Next Testimonial */}
-        <div className="hidden md:flex bg-gray-100 w-[50%] p-5 rounded-lg opacity-50">
+        <div className="hidden md:flex bg-gray-100 w-[20%] p-5 rounded-lg opacity-50">
           <Image
             src={testimonials[getNextIndex()].image}
             alt="Next Profile"
-            width={40} // Set width
-            height={40} // Set height
-            className="rounded-full mx-auto" // Reduced size
+            width={60}
+            height={60}
+            className="rounded-full mx-auto"
           />
           <div className="ml-2">
-            <p className="text-sm">{testimonials[getNextIndex()].description}</p>
+            <p className="text-sm">
+              {testimonials[getNextIndex()].description}
+            </p>
             <p className="mt-2 text-sm">{testimonials[getNextIndex()].name}</p>
           </div>
         </div>
@@ -81,7 +83,7 @@ function TestimonialCard({ testimonials }) {
         {testimonials.map((_, index) => (
           <div
             key={index}
-            className={`h-2 w-8 rounded-full mt-10 ${
+            className={`h-2 w-8 rounded-full ${
               index === currentIndex ? "bg-orange-500" : "bg-gray-300"
             }`}
           ></div>

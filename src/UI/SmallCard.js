@@ -4,13 +4,16 @@ function SmallCard(props) {
   const isWebDesign = props.title === "Web Design";
 
   return (
-    <div>
+    <div className="mt-10">
       <div
-        className={`mt-10 p-[10px] rounded-lg ${
-          isWebDesign ? "bg-orange-500 text-white" : "bg-gray-100"
+        style={{
+          backgroundColor: isWebDesign ? "rgba(253, 111, 0, 1)" : "#f3f4f6",
+        }}
+        className={`p-4 rounded-lg ${
+          isWebDesign ? "text-white" : "text-black"
         }`}
       >
-        <p className="text-lg cursor-pointer">{props.title}</p>
+        <p className="text-lg font-semibold cursor-pointer">{props.title}</p>
       </div>
     </div>
   );

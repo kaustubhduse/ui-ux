@@ -3,13 +3,13 @@ import Card from "UI/Card.js";
 
 function Services() {
   return (
-    <div className="mt-[10%]">
+    <div className="mt-[10%] lg:px-[4%]">
         <h1 className="text-4xl font-bold text-center">Services</h1>
         <p className="text-center mt-[2%]">
           Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh
           lectus netus in. Aliquet donec morbi convallis pretium
         </p>
-        <div className="flex justify-center space-x-7 md:flex-col lg:flex-row mt-[5%]">
+        <div className="flex flex-col justify-center items-center lg:flex-row lg:space-x-7 mt-[5%] space-y-7 lg:space-y-0">
           <Card
             image="/assets/uiux.png"
             alt="UI/UX Design"
